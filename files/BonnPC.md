@@ -6,7 +6,7 @@ Here are some tips for setting up the computer.
 ## Language
 
 * You need to login with your `@math.uni-bonn.de` username and password.
-* The keyboard layout for the login screen is German. This cannot be changed. 
+* The keyboard layout for the login screen is German. This cannot be changed. (This applies both to the first login after booting the computer, and to later log-ins after locking the screen.)
 * The OS language and keyboard layout are German by default, and can be changed. 
 * If you want to change the OS language to English then create a file called ".locale" in your home directory with the following content:
 ```
@@ -17,10 +17,12 @@ export LANG=en_GB.UTF-8
 
 * VSCodium is installed on some office computers, but not others. If you don't have it, you can contact the IT department with your computer name to ask them to install it. You can find your computer name by opening a shell (e.g. LXTerminal) 
 * **important** Everything related to Lean should be done in your `/local/<Username>` folder (in the Filesystem root). Lean + Mathlib cache should already be configured correctly to put the `.elan` and `.cache` folders in that directory.
-* If you have trouble installing Lean, run the `elan` installation script manually from a shell. Since the `.profile` script is not run on startup, Lean might not be added to your PATH correctly during installation. If this happens to you, edit `~/.bashrc` manually by adding the line `export PATH="${PATH}:/local/<userName>/.elan/bin"` and inserting your username (and then restarting your terminal).
+* If you have trouble installing Lean, run the `elan` installation script manually from a shell. Since the `.profile` script is not run on startup 
+When I installed Lean, `elan` was not added to the `$PATH` environment variable correctly during installation. 
+If not, edit `~/.bashrc` by adding the line `export PATH="${PATH}:/local/<userName>/.elan/bin"` and inserting your username.
 
 Minor:
-* In VSCode, you might want to edit the Keyboard Shortcuts and bind `Go Forward` to `Alt+RightArrow`.
+* `Go Forward` should be bound to `Alt+RightArrow`.
 
 ## Mouse & Keyboard
 
@@ -36,7 +38,7 @@ You can run `xinput` and `xinput list-props` to find the name and properties of 
 libinput Accel Speed (300)
 libinput Accel Profile Enabled (303)
 ```
-The `0.7` can be modified to change the sentivity of the mouse linearly.
+The `0.7` can be modified to change the sensivity of the mouse linearly.
 I didn't find a way to automatically run this when logging in (neither `.profile`, nor autostart (via GUI or directly editing a config file) seems to work). So I just run this command from `.bashrc` and then it gets executed when I open a shell for the first time.
 
 * In Firefox, consider enabling `Settings > autoscrolling` to enable scrolling with Middle mouse-button
